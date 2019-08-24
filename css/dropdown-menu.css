@@ -1,0 +1,51 @@
+[data-dropdown] {
+  position: relative;
+}
+.js [data-dropdown] .dropdown-menu {
+  display: none;
+/*(!!!) Se descobrir outro jeito de travar no-
+  me qdo n tem JS substituir o começo .js dessa
+  estilização.   (!!!)   */
+}
+[data-dropdown]:hover .dropdown-menu, [data-dropdown].ativo .dropdown-menu {
+  display: block;
+  animation: show-up .5s forwards;
+}
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+[data-dropdown].ativo a[href="sobre.html"] {
+  color: white;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 38px;
+  background: #E54;
+  border: 2px solid #333;
+  z-index: 60;
+}
+.menu li .dropdown-menu a {
+  font-size: .8rem;
+  letter-spacing: .063em;
+}
+.dropdown-menu::before {
+  content:'';
+  display: block;
+  position: absolute;
+  top:-10px;
+  height:0px;
+  width:0px;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid #E54;
+}
+.dropdown-menu li a:hover {
+  color: white;
+}
