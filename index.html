@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Javascript e E6+</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
+  <script>
+    document.documentElement.className += ' js';/* add condition class for running js if
+  the client that access the website has js running properly, when the class finally is added, the 'display block' turns on within the animations. Otherwise, if js class does not exists, display-block stays off. (GeneralStyle.css 255th line)*/
+  </script>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+  <div class="grid-container">
+    <nav class="menu" data-menu="smoothScroll">
+      <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>    
+      <ul data-menu="list" id="menu">
+        <li><a href="#animais">Animais</a></li>
+        <li data-dropdown>
+          <a href="sobre.html" target="_blank">Sobre</a>
+          <ul class="dropdown-menu">
+            <li><a href="historia.html">A Empresa</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="socios.html">Sócios</a></li>
+            <li><a href="investidores.html">Investidores</a></li>
+          </ul>
+          </li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a data-modal="abrir" href="http://pudim.com.br/" target="_blank">Login →</a></li>
+        </ul>
+    </nav>
+    <section class="grid-section animais" data-anime="scroll" id="animais">
+      <h1 class="titulo" data-cor="azul" data-width="500" id="titulo">Animais Fantásticos</h1>
+      <h2 style="font-size:.75rem;margin-left:.1rem">Aula: <em>JavaScript ES6+</em></h2>
+      <ul class="animais-lista" data-tab="menu">
+        <li>
+          <img src="img/imagem1.jpg">
+        </li>
+        <li>
+          <img src="img/imagem2.jpg">
+        </li>
+        <li>
+          <img src="img/imagem3.jpg">
+        </li>
+        <li>
+          <img src="img/imagem4.jpg">
+        </li>
+        <li>
+          <img src="img/imagem5.jpg">
+        </li>
+        <li>
+          <img src="img/imagem6.jpg">
+        </li>
+      </ul>
+      <div class="animais-descricao" data-tab="content">
+        <section data-anime="show-right">
+            <h2>Raposa</h2>
+            <p>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
+            <p>Também apesentam como particularidade suas puplas ovais, semelhantes às pupilas verticais do felídeos.</p>
+            <p>De cerca de 40 espécies reconhecidas como raposas somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
+        </section>
+        <section data-anime="show-down">
+            <h2>Esquilo</h2>
+            <p>Os esquilos são fofinhos nóias viciados em nozes a mil grau parsa. Com eles os bagui fununceia de um jeito outro tá ligado viiiish. O resto dos parágrafo é tudo migué copia cola da raposa vai veno.</p>
+            <p>Também apesentam como particularidade suas puplas ovais, semelhantes às pupilas verticais do felídeos.</p>
+            <p>De cerca de 40 espécies reconhecidas como raposas somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
+        </section>
+        <section data-anime="show-right">
+            <h2>Urso</h2>
+            <p>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
+            <p>Também apesentam como particularidade suas puplas ovais, semelhantes às pupilas verticais do felídeos.</p>
+            <p>De cerca de 40 espécies reconhecidas como raposas somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
+        </section>
+        <section data-anime="show-down">
+            <h2>Lobo</h2>
+            <p>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
+            <p>Também apesentam como particularidade suas puplas ovais, semelhantes às pupilas verticais do felídeos.</p>
+            <p>De cerca de 40 espécies reconhecidas como raposas somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
+        </section>
+          <section data-anime="show-right">
+            <h2>Macaco</h2>
+            <p>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
+            <p>Também apesentam como particularidade suas puplas ovais, semelhantes às pupilas verticais do felídeos.</p>
+            <p>De cerca de 40 espécies reconhecidas como raposas somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
+        </section>
+        <section data-anime="show-down">
+            <h2>Leão</h2>
+            <p>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
+            <p>Também apesentam como particularidade suas puplas ovais, semelhantes às pupilas verticais do felídeos.</p>
+            <p>De cerca de 40 espécies reconhecidas como raposas somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
+        </section>
+      </div>
+    </section>
+      <section class="grid-section faq" data-anime="scroll" id="faq">
+      <h1 class="titulo">FAQ</h1>
+        <dl class="faq-lista" data-anime="accordion">
+          <dt>Qual a idade dos animais?</dt>
+            <dd>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
+          <dt>Eles são fantásticos?</dt>
+            <dd>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
+          <dt>Qual  a diferença?</dt>
+            <dd>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
+          <dt>Como proteger?</dt>
+            <dd>As raposas são mamíferos e onívoros pertencentes à famíia Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
+        </dl>
+      </section>
+    
+    <section class="grid-section numeros" data-anime="scroll">
+      <h1 class="titulo">Números</h1>
+      <div class="numeros-grid">
+        <!-- Inserted By JS -->
+      </div>
+    </section>
+    
+      <section class="grid-section contato" data-anime="scroll" id="contato">
+        <h1 class="titulo">Contato</h1>
+          <div class="mapa" data-tooltip aria-label="Endereço próximo ao estacionamento.">
+            <img src="img/mapa.png">
+          </div>
+          <ul class="dados">
+            <li>contato@jgstudiolabs.com</li>
+            <li>+55 (11) 9 8843-3145</li>
+            <li>Av Gen. Mac Arthur, 170</li>
+            <li>São Paulo - SP</li>
+            <li>Ajude nosso projeto com Bitcoins!</li> 
+            <li data-btc></li>
+            <li data-semana="1,2,3,4,5" data-horario="8,18">Seg à Sex das 8 às 18hrs</li>
+          </ul>
+      </section>
+    <footer class="copy">
+      <p>Todos os direitos © reservados à JG Studio Labs®</p>
+    </footer>
+  </div>
+    <section class="modal-container" data-modal="container">
+      <div class="modal">
+        <button data-modal="fechar" class="fechar">X</button>
+        <form action="">
+          <label for="email">E-mail</label>
+          <input type="text" for="email" id="email">
+          <label for="senha">Senha</label>
+          <input type="password" for="senha" id="senha">
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </section>
+   <script src="main.js"></script>
+</body>
+</html>
