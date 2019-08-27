@@ -1,7 +1,7 @@
 export default class SmoothScroll {
   constructor(links, options) {
     this.internalLinks = document.querySelectorAll(links);
-    this.options = options || {// native animation fttunction
+    this.options = options || {// native animation function
       block: 'start',
       behavior: 'smooth',
     };
