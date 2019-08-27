@@ -1,7 +1,7 @@
 export default class SmoothScroll {
   constructor(links, options) {
     this.internalLinks = document.querySelectorAll(links);
-    this.options = options || {// native animation fttunction
+    this.options = options || {// native animation function
       block: 'start',
       behavior: 'smooth',
     };
@@ -27,7 +27,7 @@ export default class SmoothScroll {
       /* this.scrollToSection has, internally, this === link.
       So, the way it is now is correcting the "this" mistarget, is within arrow function,
       but, in this case, you loose the original this reference. So is better to bind it in
-      its constructorn */
+      its constructor */
       });
     }
   }
