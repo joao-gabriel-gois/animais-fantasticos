@@ -13,7 +13,7 @@ export default class SmoothScroll {
     // getting clicked target's href
     const href = event.currentTarget.getAttribute('href');
     const section = document.querySelector(href);
-    section.scrollIntoView(this.options);
+    section.scrollIntoView(this.optiasticos/commit/37409d28509d3433239a7f1aec8c7a0557020133ons);
   }
 
   addEvents() {
