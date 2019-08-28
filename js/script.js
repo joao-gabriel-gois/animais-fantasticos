@@ -17,7 +17,7 @@ import initFetchBTC from './modules/fetchingbtc.js';
 
 const smoothscroll = new SmoothScroll('[data-menu="smoothScroll"] a[href^="#"]');
 smoothscroll.init();
-const accordion = new Accordion();
+const accordion = new Accordion('[data-anime="accordion"] dt');
 accordion.init();
 
 // (2b) console.log('Ativando as Funções antes de' + idem);
