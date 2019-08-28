@@ -2,7 +2,7 @@
 // (1a) console.log('Funções do começo do curso até', idem);
 // ↓↓  const idem = ' Sessão 5 → "efeitos no dom" ';
 import initTabNav from './modules/tabnav.js';
-import AccordionList from './modules/accordionlist.js';
+import Accordion from './modules/accordionlist.js';
 import SmoothScroll from './modules/smoothscroll.js';
 import initScrollAnimation from './modules/scrollanimation.js';
 // (1b) console.log('A partir daqui importando de' + idem + ' em diante.');
@@ -17,8 +17,8 @@ import initFetchBTC from './modules/fetchingbtc.js';
 
 const smoothscroll = new SmoothScroll('[data-menu="smoothScroll"] a[href^="#"]');
 smoothscroll.init();
-const accordionList = new Accordion();
-accordionList.init();
+const accordion = new Accordion();
+accordion.init();
 
 // (2b) console.log('Ativando as Funções antes de' + idem);
 initTabNav();
