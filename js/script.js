@@ -1,7 +1,7 @@
 // (1) Importando Modules
 // (1a) console.log('Funções do começo do curso até', idem);
 // ↓↓  const idem = ' Sessão 5 → "efeitos no dom" ';
-import initTabNav from './modules/tabnav.js';
+import TabNav from './modules/tabnav.js';
 import Accordion from './modules/accordionlist.js';
 import SmoothScroll from './modules/smoothscroll.js';
 import initScrollAnimation from './modules/scrollanimation.js';
@@ -19,9 +19,10 @@ const smoothscroll = new SmoothScroll('[data-menu="smoothScroll"] a[href^="#"]')
 smoothscroll.init();
 const accordion = new Accordion('[data-anime="accordion"] dt');
 accordion.init();
+const tabnav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section');
+tabnav.init();
 
 // (2b) console.log('Ativando as Funções antes de' + idem);
-initTabNav();
 initScrollAnimation();
 initModal();
 initTooltip();
