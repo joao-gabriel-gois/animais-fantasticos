@@ -23,8 +23,7 @@ export default class TabNav {
   }
 
   activeDatasetAnime(i) {
-    const tab = this.tabContent;
-    if (tab.length && this.tabMenu.length) this.activeTab(i);
+    if (this.tabContent.length && this.tabMenu.length) this.activeTab(i);
   }
 
   init() {
