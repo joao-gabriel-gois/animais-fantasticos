@@ -6,7 +6,7 @@ import Accordion from './modules/accordionlist.js';
 import SmoothScroll from './modules/smoothscroll.js';
 import initScrollAnimation from './modules/scrollanimation.js';
 // (1b) console.log('A partir daqui importando de' + idem + ' em diante.');
-import initModal from './modules/modal.js';
+import Modal from './modules/modal.js';
 import initTooltip from './modules/tooltip.js';
 import initDropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
@@ -17,14 +17,18 @@ import initFetchBTC from './modules/fetchingbtc.js';
 
 const smoothscroll = new SmoothScroll('[data-menu="smoothScroll"] a[href^="#"]');
 smoothscroll.init();
+
 const accordion = new Accordion('[data-anime="accordion"] dt');
 accordion.init();
+
 const tabnav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section');
 tabnav.init();
 
+const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="fechar"]');
+modal.init();
+
 // (2b) console.log('Ativando as Funções antes de' + idem);
 initScrollAnimation();
-initModal();
 initTooltip();
 initDropdownMenu();
 initMenuMobile();
