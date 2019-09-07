@@ -26,18 +26,19 @@ export default class Modal {
   }
 
   // Verifying if our selections* actual exists in this page, avoiding errors here
-  modalAddEvents() {
-    if (this.openButton && this.closeButton && this.containerModal) {
-      /* If this target is the section outside modal, toggle it
-      adding click events to the previous selected elements
-      properly attached with their respective callback functions */
-      this.openButton.addEventListener('click', () => this.toggleModal);
-      this.closeButton.addEventListener('click', () => this.toggleModal);
-      this.containerModal.addEventListener('click', () => this.modalOutsideClick);
-    }
+  addModalEvents() {
+    this.openButton.addEventListener('click', () => this.toggleModal);
+    this.closeButton.addEventListener('click', () => this.toggleModal);
+    this.containerModal.addEventListener('click', () => this.modalOutsideClick);
   }
 
   init() {
-    this.modalAddEvents();
+    if (this.openButton && this.closeButton && this.containerModal) {
+    /* If this target is the section outside modal, toggle it
+    adding click events to the previous selected elements
+    properly attached with their respective callback functions */
+      this.AddModalEvents();
+    }
+    return this;
   }
 }

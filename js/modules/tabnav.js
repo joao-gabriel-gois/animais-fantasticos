@@ -29,5 +29,6 @@ export default class TabNav {
   init() {
     this.activeDatasetAnime(0);
     this.addTabNavEvent();
+    return this;
   }
 }
