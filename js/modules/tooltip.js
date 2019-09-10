@@ -28,13 +28,9 @@ Script's default callback object's method('handleEvent').     */
   // (4) Callback 1a.i (obj) mouseLeave's callback
   onMouseLeave() {
     this.tooltipBox.remove();
-    ['mouseleave', 'mousemove'].forEach((userEvent) => {
-      if (userEvent === 'mousemove') {
-        this.tooltips[0].removeEventListener(userEvent, this.onMouseMove);
-      } else {
-        this.tooltips[0].removeEventListener(userEvent, this.onMouseLeave);
-      }console.log('testleave')
-    });
+    event.currentTarget.removeEventListener('mouseleave', this.onMouseMove);
+    event.currentTarget.removeEventListener('mousemove', this.onMouseLeave);
+    console.log('testleave');
   };
   // (5) Callback 1 (obj) launched by previous event
   onMouseOver(event) { // ↓ 2nd Callback's launcher
