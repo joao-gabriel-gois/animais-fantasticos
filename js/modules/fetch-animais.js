@@ -5,7 +5,6 @@ export default function initFetchAnimais() {
     const div = document.createElement('div');
     div.classList.add('numero-animal');
     div.innerHTML = `<h3>${animal.species}</h3><span data-numero>${animal.total}</span>`;
-    console.log(div);
     return div;
   }
   async function fetchAnimais(url) {
