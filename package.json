@@ -6,9 +6,8 @@
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch"
   },
-  "author": "",
+  "author": "Pudou @stdnt-cl",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
@@ -22,5 +21,14 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "whatwg-fetch": "^3.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stdnt-cl/animais-fantasticos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdnt-cl/animais-fantasticos/issues"
+  },
+  "homepage": "https://github.com/stdnt-cl/animais-fantasticos#readme",
+  "description": ""
 }
