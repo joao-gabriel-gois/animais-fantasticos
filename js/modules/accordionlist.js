@@ -1,19 +1,30 @@
-export default function initAccordionList() {
-  // Selecting Accordions
-  const accordionList = document.querySelectorAll('[data-anime="accordion"] dt');
-  // Event's Callback Function that actives css animations
-  function activeAccordion() {
-    this.classList.toggle('active');
-    this.nextElementSibling.classList.toggle('active');
+export default class Accordion {
+  constructor(list) {
+    if (this.accordionList === undefined) {
+      this.accordionList = document.querySelectorAll('[data-anime="accordion"] dt');  
+    } else {
+      this.accordionList = document.querySelectorAll(list);
+    }
+    this.activeClass = 'active';
+    //this.activeAccordion = this.activeAccordion
   }
-  // Verifying
-  if (accordionList.length) {
-    // Activating first "Q" and "F" of the FAQ
-    accordionList[0].classList.add('active');
-    accordionList[0].nextElementSibling.classList.add('active');
+  addAccordionEvent() {
     // Adding event to each element of accordion
-    accordionList.forEach((item) => {
-      item.addEventListener('click', activeAccordion);
+    this.accordionList.forEach((item) => {
+      item.addEventListener('click', this.toggleAccordion(item));
     });
+  } // Event's Callback Function that actives css animations
+  toggleAccordion(item) {
+    item.classList.toggle(this.activeClass);
+    item.nextElementSibling.classList.toggle(this.activeClass);
+  }
+  init() {
+    // Verifying
+    if (this.accordionList.length) {
+      // Activating first "Q" and "F" of the FAQ
+      this.accordionList[0].classList.add(this.activeClass);
+      this.accordionList[0].nextElementSibling.classList.add(this.activeClass);
+      this.addAccordionEvent();
+    }
   }
 }
