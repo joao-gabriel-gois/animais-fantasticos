@@ -17,27 +17,23 @@ export default class Tooltip {
   /* (3) Callback (obj) also from mouseOver's parent event, makes
   tooltip moves according to the mouse's movement on selected* area. */
   onMouseMove(event) {
-    console.log('testmove')
-      this.tooltipBox.style.top = `${event.pageY + 20}px`;
-      this.tooltipBox.style.left = `${event.pageX + 20}px`;
-  };/* OBS:  ↓
-These objects could be inside of onMouseOver's function scope, but the example
-is attempting to show more about how to use it with objects that uses the Java-
-Script's default callback object's method('handleEvent').     */
+    this.tooltipBox.style.top = `${event.pageY + 24}px`;
+    if (event.pageX + 224 > window.innerWidth) { //chec if tooltip is ovrflowing the window
+      this.tooltipBox.style.left = `${event.pageX - 193}px`;
+    } else {
+      this.tooltipBox.style.left = `${event.pageX + 24}px`;
+    }
+  }
 
-  // (4) Callback 1a.i (obj) mouseLeave's callback
-  onMouseLeave() {
+  onMouseLeave(event) {
     this.tooltipBox.remove();
     event.currentTarget.removeEventListener('mouseleave', this.onMouseMove);
     event.currentTarget.removeEventListener('mousemove', this.onMouseLeave);
-    console.log('testleave');
-  };
-  // (5) Callback 1 (obj) launched by previous event
-  onMouseOver(event) { // ↓ 2nd Callback's launcher
-    console.log('testover');
+  }
+  
+  onMouseOver(event) {
     this.createTooltipBox(event.currentTarget);
     event.currentTarget.addEventListener('mouseleave', this.onMouseLeave);
-    // Adding moving mouse's event (better UI tooltip → on) ↓
     event.currentTarget.addEventListener('mousemove', this.onMouseMove);
   }
 
@@ -46,7 +42,7 @@ Script's default callback object's method('handleEvent').     */
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
   }
-  // (6) Adding events to mouse's hover on previous selected* element
+
   addTooltipEvents(){ 
     this.tooltips.forEach((item) => { // ↓ 1st Callback's launcher
       item.addEventListener('mouseover', this.onMouseOver);

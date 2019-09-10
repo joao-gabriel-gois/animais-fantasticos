@@ -1,7 +1,7 @@
 .tooltip {
   position: absolute;
   z-index: 170;
-  background: rgba(0,0,0, .6);
+  background: rgba(0,0,0, .57);
   box-shadow: 0 0 0 2px #FB5, 0 0 0 6px rgba(0,0,0,.6); 
   padding: .5rem;
   color: white;
@@ -11,4 +11,5 @@
   max-width: 180px;
   border-radius: 2px;
   position: absolute;
+  transition:all 180ms ease-out;
 }
