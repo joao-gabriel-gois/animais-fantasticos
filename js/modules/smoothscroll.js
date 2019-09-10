@@ -21,9 +21,11 @@ export default class SmoothScroll {
     if (this.internalLinks.length) {
       // Adding event's to each internal link
       this.internalLinks.forEach((link) => {
-        link.addEventListener('click', (event) => {
-          this.scrollToSection(event);
-        });
+        //if (link !== this.internalLinks[this.internalLinks.length -1]) {
+          link.addEventListener('click', (event) => {
+            this.scrollToSection(event);
+          });
+        //}
       /* this.scrollToSection has, internally, this === link.
       So, the way it is now is correcting the "this" mistarget, is within arrow function,
       but, in this case, you loose the original this reference. So is better to bind it in
