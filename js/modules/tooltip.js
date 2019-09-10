@@ -26,22 +26,14 @@ is attempting to show more about how to use it with objects that uses the Java-
 Script's default callback object's method('handleEvent').     */
 
   // (4) Callback 1a.i (obj) mouseLeave's callback
-  onMouseLeave() {// tooltip off and event's log cleaned
-    this.tooltipBox.remove();/* Errors should appear if handleEvent isn't wrapping
-    this code, because it will not leak its scope to where we're intentionally
-    directing it to */
+  onMouseLeave() {
+    this.tooltipBox.remove();
     ['mouseleave', 'mousemove'].forEach((userEvent) => {
       if (userEvent === 'mousemove') {
         this.tooltips[0].removeEventListener(userEvent, this.onMouseMove);
       } else {
         this.tooltips[0].removeEventListener(userEvent, this.onMouseLeave);
       }console.log('testleave')
-      /*  Here above we've a ternary for
-              ↓↓↓↓↓↓↓↓
-        if (event'sCondition)
-          remove thisEvent;
-        else
-          remove otherEvents;     */
     });
   };
   // (5) Callback 1 (obj) launched by previous event
@@ -66,8 +58,7 @@ Script's default callback object's method('handleEvent').     */
   }
 
   init() {
-    console.log('teste');
     this.bindingCallbacks();
-    this.addTooltipEvents();
+    if (this.tooltips.length) this.addTooltipEvents();
   }
 }

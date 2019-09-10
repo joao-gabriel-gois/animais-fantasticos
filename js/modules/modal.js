@@ -1,6 +1,6 @@
 export default class Modal {
   constructor(openBtn, closeBtn, modalContainer) {
-    // Buttons and Modal's selections*
+    //Pudou@stdnt-cl version
     this.openButton = document.querySelector(openBtn);
     this.closeButton = document.querySelector(closeBtn);
     this.modalContainer = document.querySelector(modalContainer);
@@ -15,11 +15,6 @@ export default class Modal {
     if (event.target === this.modalContainer) this.toggleModal(event);
   }
 
-  bindingModalMethods() {
-    this.toggleModal = this.toggleModal.bind(this);
-    this.modalContainer = this.modalContainer.bind(this);
-  }
-
   addModalEvents() {
     this.openButton.addEventListener('click', () => this.toggleModal(event));
     this.closeButton.addEventListener('click', () => this.toggleModal(event));
@@ -32,3 +27,6 @@ export default class Modal {
     return this;
   }
 }
+//I did this class without binding callbacks, but passing anon arrow func in callbackfunctions
+//For this particular use case nothing is requiring to bind it.
+//To test Origamid's version, import modalOrigamid.js instead of this one
