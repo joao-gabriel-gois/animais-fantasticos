@@ -2,3 +2,4 @@ node_modules
 .eslintrc.json
 v8-compile-cache-0/
 .vscode
+js/modules/modalOrigamid.js
