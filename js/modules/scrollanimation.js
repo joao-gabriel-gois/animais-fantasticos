@@ -17,8 +17,8 @@ export default class ScrollAnimation {
   }
   init() {
     if (this.sections.length) {
-        this.sections[0].classList.add('active');
-        window.addEventListener('scroll', this.animateScroll);
+      this.animateScroll();
+      window.addEventListener('scroll', this.animateScroll);
       }
   }
 }
