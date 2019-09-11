@@ -11,7 +11,7 @@ import Tooltip from './modules/tooltip.js';
 import initDropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
-import initFetchAnimais from './modules/fetch-animais.js';
+import initFetchAnimals from './modules/fetch-animals.js';
 import initFetchBTC from './modules/fetchingbtc.js';
 // (2) Activating imported classes
 
@@ -36,5 +36,5 @@ initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
 // (3) console.log('Ativando as Funções da Sessão 6');
-initFetchAnimais();
+initFetchAnimals('./animals-API-simulation.json', 'numbers-grid', 'number-animal');
 initFetchBTC();
