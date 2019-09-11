@@ -11,5 +11,5 @@
   max-width: 180px;
   border-radius: 2px;
   position: absolute;
-  transition:all 180ms ease-out;
+  transition: all 112ms linear;
 }

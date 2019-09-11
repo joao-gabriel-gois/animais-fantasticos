@@ -39,10 +39,9 @@ export default class AnimatedNumbers {
   }
 
   init() {
-    //if (this.numberSpan.length && this.observerTarget) {
-      console.log('teste');
+    if (this.numberSpan.length && this.observerTarget) {
       this.addMutationObserver(); // Obsv a mudança de attr da sessão núm (4)
-    //};
+    }
     return this;
   }
 }
