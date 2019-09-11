@@ -37,4 +37,4 @@ initMenuMobile();
 initFuncionamento();
 // (3) console.log('Ativando as Funções da Sessão 6');
 initFetchAnimals('./animals-API-simulation.json', 'numbers-grid', 'number-animal');
-initFetchBTC();
+initFetchBTC('[data-btc]', 'https://blockchain.info/ticker');

@@ -17,11 +17,11 @@ export default class Tooltip {
   /* (3) Callback (obj) also from mouseOver's parent event, makes
   tooltip moves according to the mouse's movement on selected* area. */
   onMouseMove(event) {
-    this.tooltipBox.style.top = `${event.pageY + 24}px`;
-    if (event.pageX + 224 > window.innerWidth) { //chec if tooltip is ovrflowing the window
-      this.tooltipBox.style.left = `${event.pageX - 193}px`;
-    } else {
-      this.tooltipBox.style.left = `${event.pageX + 24}px`;
+      this.tooltipBox.style.top = `${event.pageY + 24}px`;
+      if (event.pageX + 224 > window.innerWidth) { //chec if tooltip is ovrflowing the window
+        this.tooltipBox.style.left = `${event.pageX - 193}px`;
+      } else {
+        this.tooltipBox.style.left = `${event.pageX + 24}px`;
     }
   }
 
