@@ -27,7 +27,6 @@ export default class AnimatedNumbers {
   }
 
   handleMutation(mutation) {
-    console.log('teste5');
     if (mutation[0].target.classList.contains(this.observerClass)) {
       this.observer.disconnect();
       this.animateNumberSection();
@@ -47,15 +46,3 @@ export default class AnimatedNumbers {
     return this;
   }
 }
-/*
-
-(1) Primeiro seleciona a sessão.
-
-(2) Depois armazena a função callback que, qdo disparada, verifica se ta ativo,
-desconecta obs e dispara o timer da função launchNumbers.
-
-(3) Dps cria o observador, dando de parametro o callback que disparara dele
-
-(4) faz o observador observar especific. a mudança de attr da sessão, ocorrendo,
-dispara o callback de quando da criação do obs
-*/
