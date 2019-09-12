@@ -192,7 +192,7 @@ o modal no html*/
   margin-right: 10px;
 }
 /*Ultima linha da lista, bolinha vermelha, pra fechado, é o padrão*/
-.dados li[data-semana]::after {
+.dados li[data-week]::after {
   display: inline-block;
   content: '';
   width: 8px;
@@ -203,7 +203,7 @@ o modal no html*/
   background: #FF3733;
 }
 /*Caso esteja active, ou seja, esteja no horário que tá aberto*/
-.dados li[data-semana].active::after {
+.dados li[data-week].active::after {
   background: #72ED63;/*Muda a cor da bolinha pra verde*/
 }
 /*
