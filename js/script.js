@@ -4,7 +4,7 @@
 import TabNav from './modules/tabnav.js';
 import Accordion from './modules/accordionlist.js';
 import SmoothScroll from './modules/smoothscroll.js';
-import initScrollAnimation from './modules/scrollanimation.js';
+import ScrollAnimation from './modules/scrollanimation.js';
 // (1b) console.log('A partir daqui importando de' + idem + ' em diante.');
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
@@ -30,8 +30,9 @@ modal.init();
 const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
+const scrollanimation = new ScrollAnimation('[data-anime="scroll"]');
+scrollanimation.init();
 // (2b) console.log('Ativando as Funções antes de' + idem);
-initScrollAnimation();
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();

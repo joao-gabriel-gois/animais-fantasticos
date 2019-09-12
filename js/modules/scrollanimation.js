@@ -1,22 +1,45 @@
-export default function initScrollAnimation() {
-// Selection scroll-animated sections
-  const sections = document.querySelectorAll('[data-anime="scroll"]');
-  // Creating Event's Callback function
-  function animaScroll() {
-    sections.forEach((section) => {
-      // Setting the client window point to start scroll animation
-      const isAnimatedPoint = (section.getBoundingClientRect().top - window.innerHeight * 0.57) < 0;
-      // Activating it if it's time to
-      if (isAnimatedPoint) { section.classList.add('active'); } else if (section.classList.contains('active')) {
-        section.classList.remove('active');
+import debounce from './debounce.js';
+
+export default class ScrollAnimation {
+  constructor(sections) {
+    this.sections = document.querySelectorAll(sections);
+    this.halfWindow = window.innerHeight * 0.57;
+    //Here is the debounce magic
+    this.animateAtRightDistance = debounce(this.animateAtRightDistance.bind(this), 48);
+  }
+  setDistance() {
+    this.distance = [...this.sections].map((section) => {
+      const elementOffsetTop = section.offsetTop;
+      return {
+        element: section,
+        elementOffsetTop: Math.floor(elementOffsetTop - this.halfWindow)
       }
     });
   }
-  // Verifying
-  if (sections.length) {
-  // Activating animation of first scroll-animated section
-    sections[0].classList.add('active');
-    // Adding scroll event to window to launch previous callback func.
-    window.addEventListener('scroll', animaScroll);
+  animateAtRightDistance(event) {
+    this.distance.forEach((item) => {
+      const itemHTMLClass = item.element.classList;
+      if (window.pageYOffset > item.elementOffsetTop) {
+        itemHTMLClass.add('active');
+      } else if (itemHTMLClass.contains('active')) {
+        itemHTMLClass.remove('active');
+      }
+    })
+  }
+  addScrollEvent() {
+    window.addEventListener('scroll', (event) => {
+      this.animateAtRightDistance(event);
+    });
+  }
+  init() {
+    if (this.sections.length) {
+      this.setDistance();
+      this.animateAtRightDistance();
+      this.addScrollEvent();
+    }
+    return this;
+  }
+  stop() {
+    window.removeEventListener('scroll', this.animateAtRightDistance);
   }
 }
