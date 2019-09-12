@@ -10,7 +10,7 @@ import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import DropdownMenu from './modules/dropdown-menu.js';
 import MenuMobile from './modules/menu-mobile.js';
-import initFuncionamento from './modules/funcionamento.js';
+import CommercialAvailability from './modules/commercial-availability.js';
 import initFetchAnimals from './modules/fetch-animals.js';
 import initFetchBTC from './modules/fetchingbtc.js';
 
@@ -39,7 +39,8 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]', 'active');
 menuMobile.init();
 
-initFuncionamento();
+const commercialAvailability = new CommercialAvailability('[data-week]', 'active');
+commercialAvailability.init();
 
 // (3) Activating imported functions - special build for this project use, non-general features
 initFetchAnimals('./animals-API-simulation.json', 'numbers-grid', 'number-animal');
