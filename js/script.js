@@ -8,13 +8,13 @@ import ScrollAnimation from './modules/scrollanimation.js';
 // (1b) console.log('A partir daqui importando de' + idem + ' em diante.');
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
-import initDropdownMenu from './modules/dropdown-menu.js';
+import DropdownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import initFetchAnimals from './modules/fetch-animals.js';
 import initFetchBTC from './modules/fetchingbtc.js';
-// (2) Activating imported classes
 
+// (2) Activating imported classes - particular use of general features
 const smoothscroll = new SmoothScroll('[data-menu="smoothScroll"] a[href^="#"]');
 smoothscroll.init();
 
@@ -32,10 +32,13 @@ tooltip.init();
 
 const scrollanimation = new ScrollAnimation('[data-anime="scroll"]');
 scrollanimation.init();
-// (2b) console.log('Ativando as Funções antes de' + idem);
-initDropdownMenu();
+
+const dropdownMenu = new DropdownMenu('[data-dropdown]','active_2');
+dropdownMenu.init();
+
 initMenuMobile();
 initFuncionamento();
-// (3) console.log('Ativando as Funções da Sessão 6');
+
+// (3) Activating imported functions - special build for this project use, non-general features
 initFetchAnimals('./animals-API-simulation.json', 'numbers-grid', 'number-animal');
 initFetchBTC('[data-btc]', 'https://blockchain.info/ticker');

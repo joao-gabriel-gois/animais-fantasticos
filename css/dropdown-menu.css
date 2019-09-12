@@ -7,7 +7,7 @@
   me qdo n tem JS substituir o começo .js dessa
   estilização.   (!!!)   */
 }
-[data-dropdown]:hover .dropdown-menu, [data-dropdown].ativo .dropdown-menu {
+[data-dropdown]:hover .dropdown-menu, [data-dropdown].active_2 .dropdown-menu {
   display: block;
   animation: show-up .5s forwards;
 }
@@ -21,7 +21,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
-[data-dropdown].ativo a[href="sobre.html"] {
+[data-dropdown].active_2 a[href="sobre.html"] {
   color: white;
 }
 .dropdown-menu {
