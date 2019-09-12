@@ -1,8 +1,11 @@
+import debounce from './debounce.js';
+
 export default class ScrollAnimation {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.halfWindow = window.innerHeight * 0.57;
-    this.animateAtRightDistance = this.animateAtRightDistance.bind(this);
+    //Here is the debounce magic
+    this.animateAtRightDistance = debounce(this.animateAtRightDistance.bind(this), 48);
   }
   setDistance() {
     this.distance = [...this.sections].map((section) => {
@@ -14,7 +17,6 @@ export default class ScrollAnimation {
     });
   }
   animateAtRightDistance(event) {
-    console.log(event);//adding to many events, need to refactor this
     this.distance.forEach((item) => {
       const itemHTMLClass = item.element.classList;
       if (window.pageYOffset > item.elementOffsetTop) {
@@ -24,11 +26,16 @@ export default class ScrollAnimation {
       }
     })
   }
+  addScrollEvent() {
+    window.addEventListener('scroll', (event) => {
+      this.animateAtRightDistance(event);
+    });
+  }
   init() {
     if (this.sections.length) {
       this.setDistance();
       this.animateAtRightDistance();
-      window.addEventListener('scroll', this.animateAtRightDistance);
+      this.addScrollEvent();
     }
     return this;
   }
