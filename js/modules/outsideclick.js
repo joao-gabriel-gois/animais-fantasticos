@@ -14,7 +14,7 @@ export default function outsideClick(element, events, callback) {
     events.forEach((userEvent) => {
       setTimeout(() => html.addEventListener(userEvent, handleOutsideClick));
       // SetTimeout to slows and late the event assignment, allowing
-      // click at the menu-mobile to occur before this outside click
+      // click at the menu-mobile to occur before this addEventListener
     });
     element.setAttribute(outside, '');
   }
