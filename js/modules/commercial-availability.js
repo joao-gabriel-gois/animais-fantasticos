@@ -13,11 +13,8 @@ export default class CommercialAvailability {
     this.openHours= (weekHours[0] <= currentHour && currentHour < weekHours[1]);
   }
   toggleCommercialAvailability() {
-    if (this.openDays && this.openHours) {
+    if (this.openDays && this.openHours)
       this.element.classList.add(this.htmlClass);
-    } else {
-      this.element.classList.remove(this.htmlClass);
-    }
   }
   init() {
     if (this.element) {
