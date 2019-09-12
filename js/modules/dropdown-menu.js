@@ -13,7 +13,7 @@ export default class DropdownMenu {
 
   onClickOnDropdownMenus(event) {
     event.preventDefault();
-    const element = event.currentTarget
+    const element = event.currentTarget;
     element.classList.add(this.HTMLCLass);
     outsideClick(element, this.userEvents, () => {
       element.classList.remove(this.HTMLCLass);
