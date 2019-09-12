@@ -1,11 +1,8 @@
-// (1) Importando Modules
-// (1a) console.log('Funções do começo do curso até', idem);
-// ↓↓  const idem = ' Sessão 5 → "efeitos no dom" ';
+// (1) Importing Modules
 import TabNav from './modules/tabnav.js';
 import Accordion from './modules/accordionlist.js';
 import SmoothScroll from './modules/smoothscroll.js';
 import ScrollAnimation from './modules/scrollanimation.js';
-// (1b) console.log('A partir daqui importando de' + idem + ' em diante.');
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import DropdownMenu from './modules/dropdown-menu.js';
